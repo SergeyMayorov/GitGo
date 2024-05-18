@@ -1,8 +1,10 @@
 package main
 
 import (
-	v1 ""
 	"fmt"
+
+	v1 "github.com/SergeyMayorov/GitGo/tree/main/10.4/hello_v1"
+	v2 "github.com/SergeyMayorov/GitGo/tree/main/10.4/hello_v2"
 )
 
 func main() {
