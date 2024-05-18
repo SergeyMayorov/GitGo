@@ -6,9 +6,8 @@ import (
 )
 
 func main() {
-	ch := make(chan int)
+	ch := make(chan int, 5)
 	stop := make(chan struct{}, 2)
-
 	go func() {
 	OUT:
 		for {
@@ -20,16 +19,13 @@ func main() {
 					break OUT
 				}
 				fmt.Println(v)
-
 			default:
 				continue
 			}
 		}
 		fmt.Println("завершение работы горутины_1")
 	}()
-
 	go func() {
-		defer fmt.Println("завершение работы горутины_2")
 		var i int
 	OUT:
 		for {
@@ -45,7 +41,7 @@ func main() {
 				ch <- i
 			}
 		}
-
+		fmt.Println("завершение	работы горутины_2")
 	}()
 	time.Sleep(5 * time.Second)
 	stop <- struct{}{}
