@@ -3,8 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	sl1 := []int{1,2,3}
-	sl2 := []int{4,5,6}
-	sl := append(sl1, sl2...)
-	fmt.Println(sl)
+	arr1 := []int{1, 2, 3}
+	arr2 := []int{4, 5, 6}
+	arr := append(arr1, arr2...)
+	fmt.Println(arr)
 }

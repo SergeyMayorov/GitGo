@@ -2,14 +2,19 @@ package main
 
 import (
 	"fmt"
-	"sort"
 )
 
+func delByIndex(a []int, index int) []int {
+	for i := index + 1; i < len(a); i++ {
+		a[i-1] = a[i]
+	}
+	return a[:len(a)-1]
+}
+
 func main() {
-	num := 4
-	sl := []int{1, 2, 3, 4, 5, 6}
-	a := sort.IntSlice(sl[0:])
-	index := sort.SearchInts(a, num)
-	sl = append(sl[:index], sl[index+1:]...)
-	fmt.Println(sl)
+	arr := []int{1, 2, 3, 4, 5, 6}
+	fmt.Println(arr)
+	arr = delByIndex(arr, 3)
+	fmt.Println(arr)
+
 }
