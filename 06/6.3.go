@@ -1,0 +1,29 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+type contract struct {
+	ID     int
+	Number string
+	Date   string
+}
+
+func (c *contract) Get() string {
+	r := fmt.Sprintf("Договор № %s от %s}\n", c.Number, c.Date)
+	r = strings.ReplaceAll(r, "\n", "\\n")
+	r = strings.ReplaceAll(r, "\t", " ")
+	return r
+}
+
+func main() {
+	a := contract{
+		ID:     1,
+		Number: "#000A\n101",
+		Date:   "2024-01-31",
+	}
+
+	fmt.Println(a.Get())
+}
