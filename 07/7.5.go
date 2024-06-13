@@ -3,6 +3,6 @@ package main
 import "fmt"
 
 func main() {
-	arr := make([]int, 10)
+	arr := make([]int, 10, 10)
 	fmt.Println(arr)
 }
