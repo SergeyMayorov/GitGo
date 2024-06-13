@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 func main() {
+
 	var p string = "asd"
 	var s *string
 	s = &p
